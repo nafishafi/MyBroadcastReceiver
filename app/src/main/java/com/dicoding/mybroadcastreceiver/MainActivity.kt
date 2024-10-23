@@ -43,4 +43,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onDestroy()
         binding = null
     }
+//    finish Req SMS
 }
