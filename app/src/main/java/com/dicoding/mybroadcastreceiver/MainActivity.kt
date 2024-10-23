@@ -16,6 +16,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Handler
 import android.os.Looper
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
         val downloadIntentFilter = IntentFilter(ACTION_DOWNLOAD_STATUS)
-        registerReceiver(downloadReceiver, downloadIntentFilter)
+        ContextCompat.registerReceiver(this, downloadReceiver, downloadIntentFilter,  ContextCompat.RECEIVER_NOT_EXPORTED)
 
     }
     var requestPermissionLauncher = registerForActivityResult(
